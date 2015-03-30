@@ -21,5 +21,15 @@ namespace WebAppTest
             Assert.NotNull(theView);
         }
 
+        [Fact]
+
+        public void SomeTest2()
+        {
+            var homeController = new HelloWorldController();
+            var viewController = homeController.Index();
+            var theView = (ViewResult)viewController;
+            Assert.NotNull(theView);
+        }
+
     }
 }
