@@ -16,9 +16,9 @@ namespace FirstMVCProject.Controllers
 
         // GET: HelloWorld/Welcome/
 
-        public string Welcome(string name, int numTimes = 1) 
+        public string Welcome(string name, int ID = 1) 
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", numTimes is: " + numTimes);
+            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
         }
 
 
