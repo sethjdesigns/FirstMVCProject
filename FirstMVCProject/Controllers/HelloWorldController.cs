@@ -9,9 +9,18 @@ namespace FirstMVCProject.Controllers
     public class HelloWorldController : Controller
     {
         // GET: HelloWorld
-        public ActionResult Index()
+        public string Index()
         {
-            return View();
+            return "This is my <b>Default</b> action...";
         }
+
+        // GET: HelloWorld/Welcome/
+
+        public string welcome() 
+        {
+            return "This is my <b>Welcome</b> message action method....";
+        }
+
+
     }
 }
