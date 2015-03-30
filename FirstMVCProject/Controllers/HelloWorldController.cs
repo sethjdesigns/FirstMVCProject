@@ -16,7 +16,7 @@ namespace FirstMVCProject.Controllers
 
         // GET: HelloWorld/Welcome/
 
-        public string welcome() 
+        public string Welcome() 
         {
             return "This is my <b>Welcome</b> message action method....";
         }

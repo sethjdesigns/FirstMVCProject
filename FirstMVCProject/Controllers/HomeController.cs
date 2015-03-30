@@ -8,9 +8,10 @@ namespace FirstMVCProject.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public string Index()
         {
-            return View();
+            //return View();
+            return "This is my breaking the page...";
         }
 
         public ActionResult About()
