@@ -24,21 +24,10 @@ namespace FirstMVCProject.Controllers
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
-            {
-                //Created a new list object
-               var splitSearchQuery = new List<string>();
-                //seperate each string in query and add to list
-               splitSearchQuery = searchString.Split(' ').ToList();
-
-                //iterate over every item in list.
-               foreach (var item in splitSearchQuery)
-               {
-                   
-                   movies = from m in db.Movies
-                            //where the title contains the list item.
-                            where m.Title.Contains(item)
-                            select m;
-               }
+            {              
+                movies = from m in db.Movies
+                         where m.Title.Contains(searchString)
+                         select m;
             }
 
             //Genre Search Dropdown
