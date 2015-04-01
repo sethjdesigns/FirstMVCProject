@@ -30,6 +30,5 @@ namespace WebAppTest
             var theView = (ViewResult)viewController;
             Assert.NotNull(theView);
         }
-
     }
 }

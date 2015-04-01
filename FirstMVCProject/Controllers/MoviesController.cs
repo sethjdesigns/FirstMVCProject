@@ -18,6 +18,30 @@ namespace FirstMVCProject.Controllers
 
         public ActionResult Index(string movieGenre, string searchString)
         {
+
+            //Title String Search
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                //Created a new list object
+               var splitSearchQuery = new List<string>();
+                //seperate each string in query and add to list
+               splitSearchQuery = searchString.Split(' ').ToList();
+
+                //iterate over every item in list.
+               foreach (var item in splitSearchQuery)
+               {
+                   
+                   movies = from m in db.Movies
+                            //where the title contains the list item.
+                            where m.Title.Contains(item)
+                            select m;
+               }
+            }
+
+            //Genre Search Dropdown
             var GenreLst = new List<string>();
 
             var GenreQry = from d in db.Movies
@@ -26,24 +50,12 @@ namespace FirstMVCProject.Controllers
             GenreLst.AddRange(GenreQry.Distinct());
             ViewBag.movieGenre = new SelectList(GenreLst);
 
-
-            var movies = from m in db.Movies
-                         select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                
-                movies = from m in db.Movies
-                         where m.Title.Contains(searchString)
-                         select m;
-            }
-
             if (!string.IsNullOrEmpty(movieGenre))
 
             {
-                //movies = movies.Where(x => x.Genre == movieGenre);
+
                 movies = from d in db.Movies
-                         orderby d.Genre
+                         where d.Genre.Contains(movieGenre)
                          select d;
             }
 
