@@ -15,9 +15,39 @@ namespace FirstMVCProject.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index()
+
+        public ActionResult Index(string movieGenre, string searchString)
         {
-            return View(db.Movies.ToList());
+            var GenreLst = new List<string>();
+
+            var GenreQry = from d in db.Movies
+                           select d.Genre;
+
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.movieGenre = new SelectList(GenreLst);
+
+
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                
+                movies = from m in db.Movies
+                         where m.Title.Contains(searchString)
+                         select m;
+            }
+
+            if (!string.IsNullOrEmpty(movieGenre))
+
+            {
+                //movies = movies.Where(x => x.Genre == movieGenre);
+                movies = from d in db.Movies
+                         orderby d.Genre
+                         select d;
+            }
+
+            return View(movies);
         }
 
         // GET: Movies/Details/5
