@@ -110,7 +110,7 @@
 }
 
 .new-item {
-    width: 40$%;
+    width: 100%;
     height: 50px;
     background-color: #F38630;
     padding: 5px;
@@ -177,4 +177,16 @@
 
 .add-title {
     text-align: center;
+}
+
+@media(max-width:767px){
+
+    .add-button-wrap {
+        height: 220px;
+    }
+
+    .search-input {
+        margin-bottom: 10px;
+}
+
 }

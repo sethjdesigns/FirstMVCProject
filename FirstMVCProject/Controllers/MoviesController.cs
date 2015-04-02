@@ -26,9 +26,9 @@ namespace FirstMVCProject.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 //Created a new list object
-               var splitSearchQuery = new List<string>();
+               
                 //seperate each string in query and add to list
-               splitSearchQuery = searchString.Split(' ').ToList();
+               var splitSearchQuery = searchString.Split(' ');
 
                 //iterate over every item in list.
                foreach (var item in splitSearchQuery)
@@ -40,7 +40,7 @@ namespace FirstMVCProject.Controllers
             //Genre Search Dropdown
             var GenreLst = new List<string>();
 
-            var GenreQry = from d in db.Movies
+            var GenreQry = from d in movies
                            select d.Genre;
 
             GenreLst.AddRange(GenreQry.Distinct());
