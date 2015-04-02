@@ -4,48 +4,62 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="add-button-wrap">
+        @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+        {
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <p>
+                    @Html.DropDownList("movieGenre", "ALL")
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <p>
+                    <input class="search-input" id="SearchString" name="SearchString" type="text" placeholder="Search by Title:">
+                </p>
+            </div>
+        
+        <div class="col-md-4 col-sm-4 col-xs-12">
+             <input type="submit" value="Search" class="btn btn-lg search-submit new-item" />
+        </div>
+            }
+    </div>
+</div>
+<div class="row">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-lg-4 col-sm-6 group">
+            <div class="movie-item">
+                <div class="group content">
+                    <div class="title-head"> @Html.DisplayNameFor(model => model.Title)</div>
+                    <div class="title-item"> @Html.DisplayFor(modelItem => item.Title)</div>
+                    <div class="date-head"> @Html.DisplayNameFor(model => model.ReleaseDate)</div>
+                    <div class="date-item"> @Html.DisplayFor(modelItem => item.ReleaseDate)</div>
+                    <div class="genre-head"> @Html.DisplayNameFor(model => model.Genre)</div>
+                    <div class="genre-item"> @Html.DisplayFor(modelItem => item.Genre)</div>
+                    <div class="price-head"> @Html.DisplayNameFor(model => model.Price)</div>
+                    <div class="price-item"> @Html.DisplayFor(modelItem => item.Price)</div>
+                </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+                <div class="edit-links">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
-</table>
+    <h2 class="add-title">Wan't to Add a Movie?</h2>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p class="new-item">
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+            </div>
+        <div class="col-md-3"></div>
+    </div>
