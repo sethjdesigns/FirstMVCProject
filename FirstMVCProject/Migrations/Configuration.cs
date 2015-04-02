@@ -30,6 +30,7 @@ namespace FirstMVCProject.Migrations
                     Title = "Ghostbusters ",
                     ReleaseDate = DateTime.Parse("1984-3-13"),
                     Genre = "Comedy",
+                    Rating = "PG",
                     Price = 8.99M
                 },
 
@@ -38,14 +39,17 @@ namespace FirstMVCProject.Migrations
                     Title = "Ghostbusters 2",
                     ReleaseDate = DateTime.Parse("1986-2-23"),
                     Genre = "Comedy",
+                    Rating = "PG-13",
                     Price = 9.99M
                 },
+
 
                 new Movie
                 {
                     Title = "Rio Bravo",
                     ReleaseDate = DateTime.Parse("1959-4-15"),
                     Genre = "Western",
+                    Rating = "R",
                     Price = 3.99M
                 }
             );
