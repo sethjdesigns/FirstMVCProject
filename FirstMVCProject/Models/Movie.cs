@@ -17,6 +17,7 @@ namespace FirstMVCProject.Models
         [Display(Name = "Price:")]
         [DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
         public decimal Price { get; set; }
+        [Display(Name = "Rating:")]
         public string Rating { get; set; }
     }
 
