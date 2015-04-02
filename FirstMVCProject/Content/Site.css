@@ -60,7 +60,9 @@
 .genre-head,
 .genre-item,
 .price-head,
-.price-item {
+.price-item,
+.rating-head,
+.rating-item {
     text-align: left;
     float: left;
     width: 50%;
@@ -69,7 +71,8 @@
 
 .date-head,
 .genre-head,
-.price-head {
+.price-head,
+.rating-head {
     text-align: right;
     padding-right: 5px;
     font-weight: bold;
