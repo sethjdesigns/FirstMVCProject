@@ -33,11 +33,7 @@ namespace FirstMVCProject.Controllers
                 //iterate over every item in list.
                foreach (var item in splitSearchQuery)
                {
-                   
-                   movies = from m in db.Movies
-                            //where the title contains the list item.
-                            where m.Title.Contains(item)
-                            select m;
+                   movies = movies.Where(s => s.Title.Contains(item));
                }
             }
 
