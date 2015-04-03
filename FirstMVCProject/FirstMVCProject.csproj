@@ -182,6 +182,18 @@
     <Compile Include="Migrations\201504031408122_DataAnnotations.Designer.cs">
       <DependentUpon>201504031408122_DataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504031820167_RankEnums.cs" />
+    <Compile Include="Migrations\201504031820167_RankEnums.Designer.cs">
+      <DependentUpon>201504031820167_RankEnums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504031822151_RankEnums2.cs" />
+    <Compile Include="Migrations\201504031822151_RankEnums2.Designer.cs">
+      <DependentUpon>201504031822151_RankEnums2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504031824368_RankEnums3.cs" />
+    <Compile Include="Migrations\201504031824368_RankEnums3.Designer.cs">
+      <DependentUpon>201504031824368_RankEnums3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,6 +282,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504031408122_DataAnnotations.resx">
       <DependentUpon>201504031408122_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504031820167_RankEnums.resx">
+      <DependentUpon>201504031820167_RankEnums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504031822151_RankEnums2.resx">
+      <DependentUpon>201504031822151_RankEnums2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504031824368_RankEnums3.resx">
+      <DependentUpon>201504031824368_RankEnums3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
