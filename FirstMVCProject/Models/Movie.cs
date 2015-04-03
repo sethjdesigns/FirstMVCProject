@@ -4,8 +4,18 @@ using System.Data.Entity;
 
 namespace FirstMVCProject.Models
 {
+
+    public enum RatingsEnum
+    {
+        G,
+        PG,
+        PG13,
+        R  
+    }
+
     public class Movie
     {
+        public RatingsEnum RatingsEnum;
         public int ID { get; set; }
         [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
