@@ -85,7 +85,7 @@
     font-size: 10px;
     text-transform: uppercase;
     color: #999;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
     .edit-links a {
@@ -188,6 +188,6 @@
 
     .search-input {
         margin-bottom: 10px;
-}
+    }
 
 }
