@@ -10,12 +10,11 @@ namespace FirstMVCProject.Models
         G,
         PG,
         PG13,
-        R  
+        R
     }
 
     public class Movie
     {
-        public RatingsEnum RatingsEnum {get; set;}
         public int ID { get; set; } 
         [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
@@ -27,6 +26,8 @@ namespace FirstMVCProject.Models
         public decimal Price { get; set; }
         [Display(Name = "Rating:"),RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$"),StringLength(5)]
         public string Rating { get; set; }
+        [Display(Name = "Rating:")]
+        public RatingsEnum RatingsEnum { get; set; }
     }
 
     public class MovieDBContext : DbContext 
